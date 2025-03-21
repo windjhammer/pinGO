@@ -20,6 +20,7 @@ func testConnection(ip string) bool {
 
 func main() {
 	arquivoIps := "ips.txt"
+	arquivoResultado := "resultado.txt"
 
 	if _, err := os.Stat(arquivoIps); os.IsNotExist(err) {
 		fmt.Println("O arquivo ips.txt não foi encontrado no diretório do script.")
@@ -33,6 +34,7 @@ func main() {
 	}
 
 	ips := strings.Split(string(data), "\n")
+	var resultados []string
 
 	for _, ip := range ips {
 		ip = strings.TrimSpace(ip)
@@ -41,9 +43,20 @@ func main() {
 		}
 
 		if testConnection(ip) {
-			fmt.Printf("Ping para %s: Sucesso\n", ip)
+			resultado := fmt.Sprintf("Ping para %s: Sucesso", ip)
+			fmt.Println(resultado)
+			resultados = append(resultados, resultado)
 		} else {
-			fmt.Printf("Ping para %s: Falhou\n", ip)
+			resultado := fmt.Sprintf("Ping para %s: Falhou", ip)
+			fmt.Println(resultado)
+			resultados = append(resultados, resultado)
 		}
+	}
+
+	err = ioutil.WriteFile(arquivoResultado, []byte(strings.Join(resultados, "\n")), 0644)
+	if err != nil {
+		fmt.Println("Erro ao salvar os resultados:", err)
+	} else {
+		fmt.Println("Resultados salvos em", arquivoResultado)
 	}
 }
