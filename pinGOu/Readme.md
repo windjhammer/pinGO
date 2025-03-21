@@ -59,3 +59,17 @@ pinGOu
 ```
 
 ## Requisitos e Dependências 📝
+
+É necessário ter os seguintes requisitos instalados no seu sistema:
+
+Go (1.16 ou superior)
+
+Git
+
+Um editor de código como Visual Studio Code ou Neovim
+
+Sistema operacional compatível: Linux, mac ou Windows
+
+Acesso à internet para baixar dependências
+
+Além disso, crie um arquivo ips.txt contendo os endereços IP que deseja testar, um por linha.
