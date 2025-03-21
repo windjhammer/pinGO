@@ -5,7 +5,7 @@ Um programa em Go para verificar a conectividade através do protocolo ICMP de u
 
 ## 🚀 Começando
 
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
+Instruções para instalação do programa para fins de teste do seu funcionamento.
 
 Consulte **[Implantação](#-implantação)** para saber como implantar o projeto.
 
@@ -44,13 +44,8 @@ Ou execute diretamente sem compilar:
 go run main.go
 ```
 
-## 📦 Implantação
+Para implantar o programa em um ambiente ativo, basta compilar e mover o executável para um local acessível no sistema, como `/usr/local/bin/` no linux ou qualquer pasta que possua permissão de execução no *PATH* no windows.
 
-Para implantar o programa em um ambiente ativo, basta compilar e mover o executável para um local acessível no sistema, como `/usr/local/bin/` no linux ou qualquer pasta que possua permissão no windows.
-
-```
-sudo mv verificacao /usr/local/bin/
-```
 
 Agora você pode rodar o programa de qualquer lugar:
 
@@ -58,4 +53,4 @@ Agora você pode rodar o programa de qualquer lugar:
 pinGOu
 ```
 
-## Requisitos e Dependências 📝
+
